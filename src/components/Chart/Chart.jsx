@@ -23,7 +23,7 @@ export default function Chart() {
   });
   const highTemps = temperatures.map(temp => temp.high);
   const lowTemps = temperatures.map(temp => temp.low);
-  // setTemps(temps)
+  // setTemps(highTemps)
 
   return (
     <div className="chart-container">
