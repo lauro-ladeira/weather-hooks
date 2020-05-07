@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+
+.weather-container {
+  width: 100%;
+  max-width: 360px;
+  height: 159px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-container div.condition-box h1 {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 34px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.weather-container div.temperature-box {
+  margin-left: 25px;
+  display: flex;
+}
+
+.weather-container div.temperature-box h1 {
+  font-size: 75px;
+  font-weight: 300;
+  line-height: 91px;
+  color: #ffffff;
+}
+
+.weather-container div.temperature-box h2 {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 34px;
+  color: #ffffff;
+
+  margin-top: 15px;
+}
+
+.weather-container div.city-box h1 {
+  text-transform: capitalize;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 26px;
+  color: #ffffff;
+}

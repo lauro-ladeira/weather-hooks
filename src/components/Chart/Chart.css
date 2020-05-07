@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+
+.chart-container {
+  width: 100%;
+  max-width: 360px;
+  height: 159px;
+  margin: 0 auto;
+
+}
+
+.chart-container h1 {
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 26px;
+  color: #ffffff;
+}
+
+.temps-box {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.temp-card {
+  height: 17px;
+}
+
+.temp-card h1 {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  color: #ffffff;
+}
+
+.text-box {
+  display: flex;
+}
+
+.text-box div {
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 26px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.text-box div:hover {
+  opacity: 100%;
+}
+
+.high-btn {
+  margin-right: 25px;
+}
+
+.low-btn {
+  opacity: 50%;
+}
+
+@media (min-width: 770px) {
+  .chart-container {
+    width: 60%;
+    max-width: 1120px;
+  }
+}

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+
+.week-container {
+  width: 100%;
+  max-width: 344px;
+  height: 65px;
+  margin: 79px auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.week-container h1 {
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 26px;
+  color: #ffffff;
+}
+
+.week-container div.week-box {
+  margin-top: 13px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.week-container div.week-box div.day-card{
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  justify-content: space-between;
+}
+
+.week-container div.week-box div.day-card i{
+  color: #ffffff;
+}
+
+.week-container div.week-box div.day-card div.temp-detail{
+  display: flex;
+}
+
+.week-container div.week-box div.day-card h1 {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  color: #ffffff;
+}
+
+.week-container div.week-box div.day-card p {
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 12px;
+  color: #ffffff;
+}
+
+@media (min-width: 770px) {
+  .week-container {
+    width: 60%;
+    max-width: 1120px;
+  }
+}

@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  }
+
+body {
+  font: 21px Montserrat, sans-serif;
+  transition: background-color 1s;
+  /* background: linear-gradient(0deg, #FFF 0%, transparent 50%); */
+}
+
+input, button, textarea {
+  font: 18px Montserrat, sans-serif;
+
+}
+
+button {
+  cursor: pointer
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
