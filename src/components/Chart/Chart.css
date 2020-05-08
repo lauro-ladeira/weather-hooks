@@ -49,15 +49,14 @@
   line-height: 26px;
   color: #ffffff;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .text-box div {
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .text-box div:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .high-btn {
@@ -65,11 +64,11 @@
 }
 
 .high-btn.active {
-  opacity: 100;
+  opacity: 1;
 }
 
 .low-btn.active  {
-  opacity: 100;
+  opacity: 1;
 }
 
 
