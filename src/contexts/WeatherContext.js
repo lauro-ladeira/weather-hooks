@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState, useCallback } from 'react';
 import { fetchLocations } from '../api';
 import { updateTheme } from '../helpers/updateTheme';
+import '../global.css'
 
 export const WeatherContext = createContext();
 
@@ -47,6 +48,14 @@ export const WeatherProvider = ({ children }) => {
   useEffect(() => {
     fetchData(city);
   }, [fetchData, city]);
+
+  if(weatherState.isLoading) {
+    return (
+      <div className="loading-container">
+        <h3>Loading...</h3>
+      </div>
+    )
+  }
 
   return (
     <WeatherContext.Provider value={{ ...weatherState, city, setCity}}>

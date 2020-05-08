@@ -6,9 +6,9 @@ import { getIcon } from '../../helpers/getIcon';
 import './WeekCard.css';
 
 export default function WeekCard() {
-  const { forecasts, isLoading } = useContext(WeatherContext);
+  const { forecasts, error } = useContext(WeatherContext);
 
-  if (isLoading) {
+  if (error) {
     return <></>;
   }
 

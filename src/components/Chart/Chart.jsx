@@ -10,16 +10,16 @@ export default function Chart() {
     type: 'high',
   });
 
-  const { isLoading, forecasts } = useContext(WeatherContext);
+  const {forecasts, error } = useContext(WeatherContext);
 
   useEffect(() => {
-    if (!isLoading) {
+    if (!error) {
       const temperatures = forecasts.filter((el, index) => {
         return index > 0 && index < 6;
       });
       setTemps({ values: temperatures, type: 'high' });
     }
-  }, [isLoading, forecasts]);
+  }, [error, forecasts]);
 
   const handleChangeHigh = () => {
       setTemps({ ...temps, type: 'high' });
@@ -30,7 +30,7 @@ export default function Chart() {
 
   return (
     <div className="chart-container">
-      {!isLoading && (
+      {!error && (
         <>
           <div className="text-box">
             <div className={`high-btn ${temps.type ==='high' ? "active" : ""}`} onClick={handleChangeHigh}>
