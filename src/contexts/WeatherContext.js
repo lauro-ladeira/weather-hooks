@@ -5,27 +5,43 @@ import { updateTheme } from '../helpers/updateTheme';
 export const WeatherContext = createContext();
 
 export const WeatherProvider = ({ children }) => {
-  const [condition, setCondition] = useState({});
-  const [forecasts, setForecasts] = useState({});
   const [city, setCity] = useState('Viçosa, MG');
+  const [weatherState, setWeatherState] = useState({
+    condition: {},
+    forecasts: {},
+    isLoading: true,
+    error: false
+  })  ;
 
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(false);
+  const fetchData = useCallback(
+    async city => {
+      if (!weatherState.isLoading) {
+        setWeatherState({
+          ...weatherState,
+          isLoading: true,
+          error: false
+        })
+      }
 
-  const fetchData = useCallback(async city => {
-    setError(false);
-    setIsLoading(true)
+      try {
+        const { condition, forecasts, temperature } = await fetchLocations(city);
 
-    try {
-      const { condition, forecasts, temperature } = await fetchLocations(city);
-      setIsLoading(false)
-      setCondition(condition);
-      setForecasts(forecasts);
-      updateTheme(temperature);
-      
-    } catch (err) {
-      setError(true);
-    }
+        setWeatherState({
+          condition,
+          forecasts, 
+          temperature,
+          isLoading: false,
+          error: false
+        });
+        updateTheme(temperature);
+        
+      } catch (err) {
+        setWeatherState({
+          ...weatherState,
+          isLoading: false,
+          error: true
+        })
+      } // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -33,7 +49,7 @@ export const WeatherProvider = ({ children }) => {
   }, [fetchData, city]);
 
   return (
-    <WeatherContext.Provider value={{ condition, city, setCity, error, forecasts, isLoading }}>
+    <WeatherContext.Provider value={{ ...weatherState, city, setCity}}>
       {children}
     </WeatherContext.Provider>
   );

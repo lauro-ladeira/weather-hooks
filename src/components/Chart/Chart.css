@@ -5,6 +5,7 @@
   max-width: 360px;
   height: 159px;
   margin: 0 auto;
+  
 
 }
 
@@ -17,8 +18,14 @@
 
 .temps-box {
   margin-top: 25px;
+  padding: 0 15px;
   display: flex;
   justify-content: space-between;
+}
+
+.sparkline-box {
+  padding: 0 15px;
+
 }
 
 .temp-card {
@@ -45,6 +52,10 @@
   transition: 0.3s;
 }
 
+.text-box div {
+  opacity: 50%;
+}
+
 .text-box div:hover {
   opacity: 100%;
 }
@@ -53,9 +64,10 @@
   margin-right: 25px;
 }
 
-.low-btn {
-  opacity: 50%;
+.high-btn.active, .low-btn.active  {
+  opacity: 100%;
 }
+
 
 @media (min-width: 770px) {
   .chart-container {

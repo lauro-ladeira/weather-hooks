@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { WeatherContext } from '../../contexts/WeatherContext';
 import { getIcon } from '../../helpers/getIcon';
-import { isObjectEmpty } from '../../helpers/isObjectEmpty';
+// import { isObjectEmpty } from '../../helpers/isObjectEmpty';
 
 import './WeekCard.css';
 
 export default function WeekCard() {
-  const { forecasts } = useContext(WeatherContext);
+  const { forecasts, isLoading } = useContext(WeatherContext);
 
-  if (isObjectEmpty(forecasts)) {
+  if (isLoading) {
     return <></>;
   }
 

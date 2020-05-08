@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-
 import { WeatherContext } from '../../contexts/WeatherContext';
-import { isObjectEmpty } from '../../helpers/isObjectEmpty';
+
 import './WeatherCard.css';
 
 export default function WeatherCard() {
@@ -17,7 +16,7 @@ export default function WeatherCard() {
     );
   }
 
-  if (isObjectEmpty(condition) || isLoading) {
+  if (isLoading) {
     return (
       <div className="weather-container">
         <div className="condition-box">
