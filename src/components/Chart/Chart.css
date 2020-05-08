@@ -64,8 +64,12 @@
   margin-right: 25px;
 }
 
-.high-btn.active, .low-btn.active  {
-  opacity: 100%;
+.high-btn.active {
+  opacity: 100;
+}
+
+.low-btn.active  {
+  opacity: 100;
 }
 
 
